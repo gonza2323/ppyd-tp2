@@ -1,26 +1,23 @@
-// %%writefile bingo.cpp //se usa en colab
-/*
- *   - La BANCA corre en el hilo principal (main).
- *   - Cada JUGADOR corre en su propio std::thread.
- *   - Un mutex global protege la sección crítica donde
- *     un jugador anuncia un premio (evita que dos jugadores
- *     griten al mismo tiempo y que se dupliquen premios).
- *   - Una variable atómica 'partida_terminada' señaliza a
- *     todos los hilos que alguien completó el cartón.
- *
- *  Premios intermedios:
- *   - Ambo    : 2 aciertos en la misma fila
- *   - Terna   : 3 aciertos en la misma fila
- *   - Cuaterna: 4 aciertos en la misma fila
- *   - Quintina: 5 aciertos en la misma fila
- *   - Cartón lleno: todos los 15 números marcados
- *
- *  Compilación:
- *   g++ -std=c++11 bingo.cpp -o bingo -pthread
- *
- *  Ejecución:
- *   ./bingo
- */
+// Autores: Lucía Alvarez, Paula Martínez, Gonzalo Padilla
+
+//  - La BANCA corre en el hilo principal (main).
+//  - Cada JUGADOR corre en su propio std::thread.
+//  - Un mutex global protege la sección crítica donde
+//    un jugador anuncia un premio (evita que dos jugadores
+//    griten al mismo tiempo y que se dupliquen premios).
+//  - Una variable atómica 'partida_terminada' señaliza a
+//    todos los hilos que alguien completó el cartón.
+// Premios intermedios:
+//  - Ambo    : 2 aciertos en la misma fila
+//  - Terna   : 3 aciertos en la misma fila
+//  - Cuaterna: 4 aciertos en la misma fila
+//  - Quintina: 5 aciertos en la misma fila
+//  - Cartón lleno: todos los 15 números marcados
+// Compilación:
+//  g++ -std=c++11 bingo.cpp -o bingo -pthread
+// Ejecución:
+//  ./bingo
+
 #include <iostream>
 #include <thread>
 #include <mutex>

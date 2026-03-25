@@ -1,0 +1,3 @@
+// Autores: Lucía Alvarez, Paula Martínez, Gonzalo Padilla
+
+A diferencia del ejercicio 1 donde la variable global compartida tenía valores distintos, acá todos los procesos tipo 2 van a imprimir siempre "Compartida = 0". Eso demuestra que los procesos no comparten memoria: los procesos tipo 1 incrementaron su propia copia, pero esa modificación nunca llegó a los procesos tipo 2.

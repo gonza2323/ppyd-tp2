@@ -1,3 +1,6 @@
+// Autores: Lucía Alvarez, Paula Martínez, Gonzalo Padilla
+// compilación= ./sieteymedio N 
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
